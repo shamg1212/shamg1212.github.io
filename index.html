@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shyam Sundar G</title>
+<title>Shyam Sundar Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -152,9 +152,11 @@ hr{border:none;border-top:1px solid rgba(255,255,255,.07);}
 .fok{display:none;margin-top:12px;text-align:center;font-size:13px;color:#C9873A;font-weight:500;}
 
 @media(max-width:860px){
-  .hero{grid-template-columns:1fr;}
-  .photo-col{display:none;}
-  .left{padding:40px 5%;}
+  .hero{grid-template-columns:1fr;position:relative;}
+  .photo-col{display:block;position:absolute;inset:0;z-index:0;}
+  .photo-col img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+  .photo-col::after{background:rgba(15,17,23,.85);}
+  .left{padding:40px 5%;position:relative;z-index:1;}
   .frow{grid-template-columns:1fr;}
   header{padding:16px 5%;}
 }
@@ -266,13 +268,13 @@ function go(){
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-card-title">Product Management</div>
-        <div class="skill-card-skills">Product Discovery · Product Strategy · Roadmap · Agile / Scrum · PRD · MoSCoW · Design Thinking · User Persona & Journey Mapping · Prototype Validation · Cross-functional Delivery · Stakeholder Management · BAT & UAT</div>
-        <div class="skill-card-tools"><span>JIRA</span><span>Figma</span><span>Miro</span><span>Coda</span><span>Postman</span><span>Vibe Coding</span></div>
+        <div class="skill-card-skills">Product Discovery · Product Strategy · Roadmap · KPIs · Agile / Scrum · PRD · MoSCoW · Design Thinking · User Persona & Journey Mapping · User Experience · Prototype Validation · Cross-functional Delivery · Stakeholder Management · BAT & UAT</div>
+        <div class="skill-card-tools"><span>JIRA</span><span>Figma</span><span>Miro</span><span>Coda</span><span>Postman</span><span>Vibe Coding</span><span>Claude Code</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-card-title">Product Growth</div>
         <div class="skill-card-skills">PLG & PQLs · Free Trial Strategy · Co-invite Growth · Onboarding Optimisation · Activation & Retention · Pricing & Packaging · In-app Experience · User Experience · Demos & Role Plays · Chat & Customer Support · Lifecycle Campaigns</div>
-        <div class="skill-card-tools"><span>PostHog</span><span>Hotjar</span><span>Clarity</span><span>OpenReplay</span><span>Mailchimp</span><span>Power BI</span><span>Email Automation</span></div>
+        <div class="skill-card-tools"><span>PostHog</span><span>Hotjar</span><span>Clarity</span><span>OpenReplay</span><span>Mailchimp</span><span>Mautic</span><span>Power BI</span><span>Email Automation</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-card-title">GTM & Strategy</div>
@@ -577,8 +579,8 @@ function showTab(id, btn) {
   el.height = 400;
   WordCloud(el, {
     list: [
-      ['ExpressTruckTax', 52],
-      ['TaxBandits', 60],
+      ['ExpressTruckTax', 62],
+      ['TaxBandits', 54],
       ['TruckLogics', 56],
       ['Tax990', 48],
       ['ACAwise', 44],
@@ -604,6 +606,7 @@ function showTab(id, btn) {
     rotationSteps: 1,
     shuffle: true,
     drawOutOfBound: false,
+    shrinkToFit: true,
     gridSize: 8,
     weightFactor: 1,
     minSize: 14,
